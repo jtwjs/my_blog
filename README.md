@@ -10,3 +10,14 @@
 - Next.js
 - Typescript
 - React Query
+
+## script
+
+```bash
+$ npm run dev
+```
+
+```bash
+$ npm run build
+$ npm run deploy
+```
