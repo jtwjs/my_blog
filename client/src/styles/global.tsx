@@ -8,8 +8,6 @@ const style = css`
   }
 `;
 
-const GlobalStyle = () => {
-  return <Global styles={style} />;
-};
+const globalStyles = <Global styles={style} />;
 
-export default GlobalStyle;
+export default globalStyles;
