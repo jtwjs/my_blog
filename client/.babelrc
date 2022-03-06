@@ -20,7 +20,8 @@
           "@utils": "./src/utils",
           "@hooks": "./src/hooks",
           "@components": "./src/components",
-          "@styles": "./src/styles"
+          "@styles": "./src/styles",
+          "@assets": "./src/assets"
         }
       }
     ],
@@ -30,6 +31,7 @@
         "autoLabel": "dev-only", // 기본값 'dev-only'
         "labelFormat": "[dirname]-[filename]-[local]"
       }
-    ]
+    ],
+    ["inline-react-svg"]
   ]
 }
