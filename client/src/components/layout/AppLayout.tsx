@@ -1,7 +1,14 @@
 import React, { FC } from "react";
 
-const AppLayout: FC = () => {
-  return <div></div>;
+import Header from "./header/Header";
+
+const AppLayout: FC = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };
 
 export default AppLayout;
