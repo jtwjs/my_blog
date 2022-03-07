@@ -16,7 +16,13 @@ const SearchBar: FC<SearchBarProps> = ({ className, ...restProps }) => {
         검색
       </label>
       <SearchBarIcon css={S.searchIcon} />
-      <input type="text" id={SEARCH_BAR_ID} css={S.searchBar} {...restProps} />
+      <input
+        type="text"
+        css={S.searchBar}
+        id={SEARCH_BAR_ID}
+        autoComplete="off"
+        {...restProps}
+      />
     </div>
   );
 };

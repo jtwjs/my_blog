@@ -9,6 +9,7 @@ export const wrapper = css`
 export const searchIcon = css`
   position: absolute;
   left: 0.5rem;
+  pointer-events: none;
 `;
 
 export const searchBar = (theme: Theme) => css`
