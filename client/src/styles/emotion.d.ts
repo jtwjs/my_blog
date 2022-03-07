@@ -19,9 +19,17 @@ declare module "@emotion/react" {
     color: {
       primary: string;
       black: string;
+      white: string;
       border: string;
       text_base: string;
       text_gray: string;
+    };
+    zindex: {
+      header: number;
+      nav: number;
+      main: number;
+      footer: number;
+      modal: number;
     };
   }
 }
