@@ -80,6 +80,7 @@ export const elements = css`
 export const wrapper = css`
   position: relative;
   padding: 1rem;
+  transform: scale(0.75);
   cursor: pointer;
 
   input[type='checkbox'] {
