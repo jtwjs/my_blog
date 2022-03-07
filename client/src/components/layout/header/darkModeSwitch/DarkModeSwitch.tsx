@@ -4,7 +4,11 @@ import * as S from "./DarkModeSwitch.style";
 
 const DARK_SWITCH_ID = "dark-switch";
 
-const DarkModeSwitch: FC = () => {
+type DarkModeSwitchProps = {
+  className?: string;
+};
+
+const DarkModeSwitch: FC<DarkModeSwitchProps> = ({ className }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleToggleSwitch = () => {
@@ -18,6 +22,7 @@ const DarkModeSwitch: FC = () => {
   return (
     <label
       css={S.wrapper}
+      className={className}
       htmlFor={DARK_SWITCH_ID}
       tabIndex={0}
       onKeyDown={handleEnter}
