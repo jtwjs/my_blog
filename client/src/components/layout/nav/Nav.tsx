@@ -4,9 +4,13 @@ import { navItems } from "@assets/static/nav";
 import NavItem from "./navItem/NavItem";
 import * as S from "./Nav.style";
 
-const Nav: FC = () => {
+type NavProps = {
+  className?: string;
+};
+
+const Nav: FC<NavProps> = ({ className }) => {
   return (
-    <nav css={S.wrapper}>
+    <nav css={S.wrapper} className={className}>
       <ul css={S.list}>
         {navItems.map(({ link, label, external = false }) => (
           <NavItem key={label} link={link} label={label} external={external} />
