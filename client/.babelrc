@@ -21,7 +21,8 @@
           "@hooks": "./src/hooks",
           "@components": "./src/components",
           "@styles": "./src/styles",
-          "@assets": "./src/assets"
+          "@assets": "./src/assets",
+          "@recoil": "./src/recoil"
         }
       }
     ],
