@@ -1,8 +1,9 @@
 import { css, Theme } from "@emotion/react";
 
-export const wrapper = css`
-  height: 4rem;
+export const wrapper = (theme: Theme) => css`
+  height: 3rem;
   margin-right: 1.6rem;
+  background-color: ${theme.color.white};
 `;
 
 export const list = (theme: Theme) => css`

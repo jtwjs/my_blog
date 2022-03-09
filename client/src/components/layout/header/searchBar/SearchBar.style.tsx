@@ -13,14 +13,29 @@ export const searchIcon = css`
 `;
 
 export const searchBar = (theme: Theme) => css`
-  width: 16rem;
-  height: 3rem;
+  width: 1rem;
+  height: 3.2rem;
   border-radius: 3.2rem;
-  border: 1px solid ${theme.color.border};
+  border: 0;
   padding: 0 0.8rem 0 3.2rem;
   font-size: ${theme.fontSize.small};
+  transform: translateX(-1rem);
+  transition: all 0.2s ease;
 
   &:focus {
-    border-color: ${theme.color.primary};
+    width: calc(100vw - 8.8rem);
+    border: 1px solid ${theme.color.primary};
+    transform: translateX(0);
+  }
+
+  @media screen and ${theme.device.tablet} {
+    width: 16rem;
+    height: 3rem;
+    border: 1px solid ${theme.color.border};
+    transform: none;
+
+    &:focus {
+      width: 16rem;
+    }
   }
 `;
