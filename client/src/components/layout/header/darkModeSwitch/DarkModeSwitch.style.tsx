@@ -50,28 +50,28 @@ export const elements = css`
       transition: fill 400ms ease;
     }
 
-    &:first-child {
+    &:first-of-type {
       transform: translate(1.8em, 0.35em);
     }
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       transform: translate(2.8em, 0.7em);
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       transform: translate(3.2em, 1.8em);
     }
-    &:nth-child(4) {
+    &:nth-of-type(4) {
       transform: translate(2.8em, 2.8em);
     }
-    &:nth-child(5) {
+    &:nth-of-type(5) {
       transform: translate(1.8em, 3.2em);
     }
-    &:nth-child(6) {
+    &:nth-of-type(6) {
       transform: translate(0.7em, 2.8em);
     }
-    &:nth-child(7) {
+    &:nth-of-type(7) {
       transform: translate(0.35em, 1.8em);
     }
-    &:nth-child(8) {
+    &:nth-of-type(8) {
       transform: translate(0.7em, 0.7em);
     }
   }
