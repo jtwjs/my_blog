@@ -1,5 +1,8 @@
 import React, { FC } from "react";
+import { useRecoilState } from "recoil";
 
+import asideToggleAtom from "@recoil/asideToggle/index";
+import { DOM_ID } from "@utils/constants";
 import MenuIcon from "@assets/icons/ic_menu.svg";
 import * as S from "./MenuButton.style";
 
@@ -8,8 +11,9 @@ type MenuButtonProps = {
 };
 
 const MenuButton: FC<MenuButtonProps> = ({ className }) => {
-  const handleOpenSide = () => {
-    console.log("open");
+  const [isShowAside, setIsShowAside] = useRecoilState(asideToggleAtom);
+  const handleShowAside = (): void => {
+    setIsShowAside((prev: boolean) => !prev);
   };
 
   return (
@@ -18,7 +22,9 @@ const MenuButton: FC<MenuButtonProps> = ({ className }) => {
       css={S.wrapper}
       className={className}
       aria-label="사이드 메뉴 열기"
-      onClick={handleOpenSide}
+      aria-controls={DOM_ID.sidebar}
+      aria-expanded={isShowAside}
+      onClick={handleShowAside}
     >
       <MenuIcon />
     </button>
