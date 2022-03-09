@@ -5,7 +5,6 @@ declare module "@emotion/react" {
     device: {
       desktop: string;
       tablet: string;
-      mobile: string;
     };
     fontSize: {
       xs: string;
@@ -26,7 +25,7 @@ declare module "@emotion/react" {
     };
     zindex: {
       header: number;
-      nav: number;
+      aside: number;
       main: number;
       footer: number;
       modal: number;

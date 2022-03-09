@@ -3,16 +3,14 @@ import { Theme } from "@emotion/react";
 const userCalcRem = (size: number): string => `${size / 10}rem`;
 
 const breakpoint = {
-  desktop: 1440,
-  tablet: 960,
-  mobile: 768,
+  lg: 1200,
+  md: 768,
 };
 
 const theme: Theme = {
   device: {
-    desktop: `(min-width: ${breakpoint.desktop}px)`,
-    tablet: `(max-width: ${breakpoint.tablet}px)`,
-    mobile: `(max-width: ${breakpoint.mobile}px)`,
+    desktop: `(min-width: ${breakpoint.lg}px)`,
+    tablet: `(min-width: ${breakpoint.md}px)`,
   },
   fontSize: {
     xs: userCalcRem(12),
@@ -33,7 +31,7 @@ const theme: Theme = {
   },
   zindex: {
     header: 200,
-    nav: 100,
+    aside: 100,
     main: 50,
     footer: 80,
     modal: 500,
