@@ -1,18 +1,30 @@
 import { css, Theme } from "@emotion/react";
 
-export const wrapper = (theme: Theme) => css`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20rem;
-  height: 100vh;
-  padding-top: 5.5rem;
-  border-right: 1px solid ${theme.color.border};
-  z-index: ${theme.zindex.aside};
+type wrapperProps = {
+  isShowAside: boolean;
+};
 
-  @media screen and ${theme.device.tablet} {
-  }
-`;
+export const wrapper = (theme: Theme, { isShowAside }: wrapperProps) =>
+  css`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100vh;
+    padding-top: 5.5rem;
+    border-right: 1px solid ${theme.color.border};
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    z-index: ${theme.zindex.aside};
+
+    ${isShowAside === true &&
+    `
+      transform: translateX(0);
+    `}
+
+    @media screen and ${theme.device.tablet} {
+    }
+  `;
 
 export const navBar = (theme: Theme) => css`
   height: auto;
