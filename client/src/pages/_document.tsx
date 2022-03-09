@@ -17,7 +17,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
             rel="stylesheet"
           ></link>
-          <title>JTW Blog</title>
         </Head>
         <body>
           <Main />
