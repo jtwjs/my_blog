@@ -22,9 +22,10 @@ const theme: Theme = {
     titleSize: userCalcRem(48),
   },
   color: {
-    primary: "#0066ff",
+    primary: "#6aada4",
     black: "#191A20",
     white: "#FFF",
+    darkGray: "#222",
     border: "#eaecef",
     text_base: "#2c3e50",
     text_gray: "#ccc",
