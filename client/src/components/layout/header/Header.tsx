@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { forwardRef } from "react";
 import Link from "next/link";
 
 import Nav from "@components/layout/nav/Nav";
@@ -7,9 +7,9 @@ import DarkModeSwitch from "./darkModeSwitch/DarkModeSwitch";
 import MenuButton from "./menuButton/MenuButton";
 import * as S from "./Header.style";
 
-const Header: FC = () => {
+const Header = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <header css={S.header}>
+    <header css={S.header} ref={ref}>
       <MenuButton css={S.menuBtn} />
       <div css={S.container}>
         <h1 css={S.title}>
@@ -25,6 +25,6 @@ const Header: FC = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;
