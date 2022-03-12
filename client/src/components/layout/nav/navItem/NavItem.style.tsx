@@ -8,14 +8,18 @@ export const wrapper = css`
   }
 `;
 
-export const link = (theme: Theme) => css`
+type linkProps = {
+  isActive: boolean;
+};
+
+export const link = (theme: Theme, { isActive = false }: linkProps) => css`
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
   padding: 0 0.4rem;
-  color: ${theme.color.text_base};
+  color: ${isActive ? theme.color.primary : theme.color.text_base};
   transition: 0.2s all ease-in-out;
 
   &&:hover {
