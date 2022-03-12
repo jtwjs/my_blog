@@ -9,6 +9,7 @@
 - Create-next-app
 - Next.js
 - Typescript
+- recoil
 - React Query
 
 ## script
