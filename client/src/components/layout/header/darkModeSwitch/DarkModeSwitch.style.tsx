@@ -104,23 +104,23 @@ export const wrapper = css`
     transform: rotate(180deg);
 
     svg {
-      &:first-child {
+      &:first-of-type {
         opacity: 0;
         transform: translate(2em, 1em);
       }
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         opacity: 0;
         transform: translate(3em, 1.5em);
       }
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         opacity: 0;
         transform: translate(3em, 2em);
       }
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         opacity: 0;
         transform: translate(3em, 2em);
        }
-      &:nth-child(5) {
+      &:nth-of-type(5) {
         width: 0.3em;
         height: 0.3em;
         transform: translate(1.9em, 2.6em);
@@ -129,7 +129,7 @@ export const wrapper = css`
           fill: #D7D7D820;
         }
       }
-      &:nth-child(6) {
+      &:nth-of-type(6) {
         width: 0.3em;
         height: 0.3em;
         transform: translate(1.4em, 2.5em);
@@ -138,7 +138,7 @@ export const wrapper = css`
           fill: #D7D7D820;
         }
       }
-      &:nth-child(7) {
+      &:nth-of-type(7) {
         width: 0.7em;
         height: 0.7em;
         transform: translate(1.1em, 1.6em);
@@ -147,7 +147,7 @@ export const wrapper = css`
           fill: #D7D7D820;
         }
       }
-      &:nth-child(8) {
+      &:nth-of-type(8) {
         width: 0.45em;
         height: 0.45em;
         transform: translate(1.7em, 2.1em);
