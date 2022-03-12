@@ -8,16 +8,14 @@ type NavProps = {
   className?: string;
 };
 
-const Nav: FC<NavProps> = ({ className }) => {
-  return (
-    <nav css={S.wrapper} className={className}>
-      <ul css={S.list}>
-        {navItems.map(({ link, label, external = false }) => (
-          <NavItem key={label} link={link} label={label} external={external} />
-        ))}
-      </ul>
-    </nav>
-  );
-};
+const Nav: FC<NavProps> = ({ className }) => (
+  <nav css={S.wrapper} className={className}>
+    <ul css={S.list}>
+      {navItems.map(({ path, label, external = false }) => (
+        <NavItem key={label} path={path} label={label} external={external} />
+      ))}
+    </ul>
+  </nav>
+);
 
 export default Nav;
