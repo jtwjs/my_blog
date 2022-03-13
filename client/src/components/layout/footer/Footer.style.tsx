@@ -6,10 +6,10 @@ export const wrapper = (theme: Theme) => css`
   width: 100%;
   border-top: 1px solid ${theme.color.border};
   padding: 4rem 0;
-  background-color: ${theme.color.white};
+  background-color: ${theme.color.bg_secondary};
 
   & > span {
-    font-size: 1.4rem;
+    font-size: ${theme.fontSize.small};
     font-weight: 500;
     line-height: 1.25;
   }

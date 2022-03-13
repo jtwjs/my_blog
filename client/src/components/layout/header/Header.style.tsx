@@ -9,7 +9,7 @@ export const header = (theme: Theme) => css`
   width: 100vw;
   border-bottom: 1px solid ${theme.color.border};
   padding: 0 2.4rem 0 6.4rem;
-  background-color: ${theme.color.white};
+  background-color: ${theme.color.bg_secondary};
   z-index: ${theme.zindex.header};
 
   @media screen and ${theme.device.tablet} {
@@ -46,7 +46,7 @@ export const links = (theme: Theme) => css`
   display: flex;
   align-items: center;
   height: 3rem;
-  background-color: ${theme.color.white};
+  background-color: ${theme.color.bg_secondary};
 
   @media screen and ${theme.device.tablet} {
     position: relative;

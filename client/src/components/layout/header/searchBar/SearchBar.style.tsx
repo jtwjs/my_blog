@@ -6,9 +6,10 @@ export const wrapper = css`
   align-items: center;
 `;
 
-export const searchIcon = css`
+export const searchIcon = (theme: Theme) => css`
   position: absolute;
   left: 0.5rem;
+  fill: ${theme.color.icon};
   pointer-events: none;
 `;
 
