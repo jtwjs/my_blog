@@ -22,7 +22,8 @@
           "@components": "./src/components",
           "@styles": "./src/styles",
           "@assets": "./src/assets",
-          "@recoil": "./src/recoil"
+          "@recoil": "./src/recoil",
+          "@type": "./src/types"
         }
       }
     ],
