@@ -1,5 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
+import useTheme from "@hooks/useTheme";
 import * as S from "./DarkModeSwitch.style";
 
 const DARK_SWITCH_ID = "dark-switch";
@@ -9,14 +10,10 @@ type DarkModeSwitchProps = {
 };
 
 const DarkModeSwitch: FC<DarkModeSwitchProps> = ({ className }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const handleToggleSwitch = () => {
-    setIsDarkMode((prev) => !prev);
-  };
+  const [theme, toggleTheme] = useTheme();
 
   const handleEnter = (e: React.KeyboardEvent<HTMLLabelElement>): void => {
-    e.keyCode === 13 && handleToggleSwitch();
+    e.keyCode === 13 && toggleTheme();
   };
 
   return (
@@ -31,8 +28,8 @@ const DarkModeSwitch: FC<DarkModeSwitchProps> = ({ className }) => {
       <input
         id={DARK_SWITCH_ID}
         type="checkbox"
-        checked={isDarkMode}
-        onChange={handleToggleSwitch}
+        checked={theme === "dark"}
+        onChange={toggleTheme}
       />
       <div css={S.planet} />
       <div css={S.elements}>
