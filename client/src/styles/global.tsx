@@ -5,6 +5,7 @@ const style = (theme: Theme) => css`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: ${theme.color.text_base};
   }
 
   html {
@@ -13,7 +14,6 @@ const style = (theme: Theme) => css`
 
   body {
     font-family: "Noto Sans KR", sans-serif;
-    color: ${theme.color.text_base};
   }
 
   input,
@@ -49,7 +49,7 @@ const style = (theme: Theme) => css`
   button:focus-visible,
   input:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.65);
+    box-shadow: 0 0 0 2px rgba(106, 173, 164, 0.65);
   }
 
   .a11y {

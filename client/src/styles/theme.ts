@@ -1,5 +1,10 @@
 import { Theme } from "@emotion/react";
 
+interface ThemeGroup {
+  light: Theme;
+  dark: Theme;
+}
+
 const userCalcRem = (size: number): string => `${size / 10}rem`;
 
 const breakpoint = {
@@ -7,36 +12,68 @@ const breakpoint = {
   md: 768,
 };
 
-const theme: Theme = {
-  device: {
-    desktop: `(min-width: ${breakpoint.lg}px)`,
-    tablet: `(min-width: ${breakpoint.md}px)`,
-  },
-  fontSize: {
-    xs: userCalcRem(12),
-    small: userCalcRem(14),
-    base: userCalcRem(16),
-    lg: userCalcRem(18),
-    xl: userCalcRem(21),
-    xxl: userCalcRem(23),
-    titleSize: userCalcRem(48),
-  },
+const device = {
+  desktop: `(min-width: ${breakpoint.lg}px)`,
+  tablet: `(min-width: ${breakpoint.md}px)`,
+};
+
+const fontSize = {
+  xs: userCalcRem(12),
+  small: userCalcRem(14),
+  base: userCalcRem(16),
+  lg: userCalcRem(18),
+  xl: userCalcRem(21),
+  xxl: userCalcRem(23),
+  titleSize: userCalcRem(48),
+};
+
+const zindex = {
+  header: 200,
+  aside: 100,
+  main: 50,
+  footer: 80,
+  modal: 500,
+};
+
+const light: Theme = {
+  device,
+  fontSize,
+  zindex,
   color: {
     primary: "#6aada4",
     black: "#191A20",
     white: "#FFF",
     darkGray: "#222",
+    bg_primary: "#FFF",
+    bg_secondary: "#FFF",
     border: "#eaecef",
     text_base: "#2c3e50",
     text_gray: "#ccc",
-  },
-  zindex: {
-    header: 200,
-    aside: 100,
-    main: 50,
-    footer: 80,
-    modal: 500,
+    icon: "#191A20",
   },
 };
 
-export default theme;
+const dark: Theme = {
+  device,
+  fontSize,
+  zindex,
+  color: {
+    primary: "#6aada4",
+    black: "#191A20",
+    white: "#FFF",
+    darkGray: "#222",
+    bg_primary: "#1C2128",
+    bg_secondary: "#2D333B",
+    border: "#444c56",
+    text_base: "#adbac7;",
+    text_gray: "#ccc",
+    icon: "#FFF",
+  },
+};
+
+const mode: ThemeGroup = {
+  light,
+  dark,
+};
+
+export default mode;
