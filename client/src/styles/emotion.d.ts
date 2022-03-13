@@ -14,6 +14,7 @@ declare module "@emotion/react" {
       xl: string;
       xxl: string;
       titleSize: string;
+      subTitleSize: string;
     };
     color: {
       primary: string;
@@ -23,6 +24,7 @@ declare module "@emotion/react" {
       bg_primary: string;
       bg_secondary: string;
       darkGray: string;
+      text_title: string;
       text_base: string;
       text_gray: string;
       icon: string;
