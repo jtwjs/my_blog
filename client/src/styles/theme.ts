@@ -25,6 +25,7 @@ const fontSize = {
   xl: userCalcRem(21),
   xxl: userCalcRem(23),
   titleSize: userCalcRem(48),
+  subTitleSize: userCalcRem(32),
 };
 
 const zindex = {
@@ -47,6 +48,7 @@ const light: Theme = {
     bg_primary: "#FFF",
     bg_secondary: "#FFF",
     border: "#eaecef",
+    text_title: "#24292f",
     text_base: "#2c3e50",
     text_gray: "#ccc",
     icon: "#191A20",
@@ -65,7 +67,8 @@ const dark: Theme = {
     bg_primary: "#1C2128",
     bg_secondary: "#2D333B",
     border: "#444c56",
-    text_base: "#adbac7;",
+    text_title: "#adbac7",
+    text_base: "#768390",
     text_gray: "#ccc",
     icon: "#FFF",
   },

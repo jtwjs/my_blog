@@ -5,7 +5,6 @@ const style = (theme: Theme) => css`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: ${theme.color.text_base};
   }
 
   html {
@@ -14,6 +13,8 @@ const style = (theme: Theme) => css`
 
   body {
     font-family: "Noto Sans KR", sans-serif;
+    color: ${theme.color.text_base};
+    background-color: ${theme.color.bg_secondary};
   }
 
   input,
