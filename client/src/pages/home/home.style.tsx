@@ -28,12 +28,13 @@ export const fallback = (theme: Theme) => css`
 
 export const title = (theme: Theme) => css`
   margin-bottom: 2rem;
-  font-size: 3.2rem;
+  font-size: ${theme.fontSize.subTitleSize};
+  color: ${theme.color.text_title};
 `;
 
 export const subTitle = (theme: Theme) => css`
   margin-bottom: 2rem;
-  font-size: 1.9rem;
+  font-size: ${theme.fontSize.lg};
   color: ${theme.color.primary};
 `;
 
@@ -45,7 +46,7 @@ export const linkBtn = (theme: Theme) => css`
   margin: 0 auto;
   border-radius: 4px;
   padding: 0 2rem;
-  font-size: 1.6rem;
+  font-size: ${theme.fontSize.base};
   color: ${theme.color.white};
   background-color: ${theme.color.primary};
 `;
@@ -68,14 +69,14 @@ export const featureItem = (theme: Theme) => css`
 
   & > dt {
     margin-bottom: 2rem;
-    font-size: 2rem;
-    color: ${theme.color.black};
+    font-size: ${theme.fontSize.xl};
+    color: ${theme.color.text_title};
     text-align: left;
     text-transform: capitalize;
   }
 
   & > dd {
-    font-size: 1.6rem;
+    font-size: ${theme.fontSize.base};
     color: ${theme.color.text_base};
     text-align: left;
   }
