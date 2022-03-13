@@ -38,6 +38,7 @@ export const container = css`
 export const title = (theme: Theme) => css`
   font-size: ${theme.fontSize.xl};
   font-weight: 500;
+  color: ${theme.color.text_title};
 `;
 
 export const links = (theme: Theme) => css`

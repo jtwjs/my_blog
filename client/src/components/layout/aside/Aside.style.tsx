@@ -13,7 +13,7 @@ export const wrapper = (theme: Theme, { isShowAside }: wrapperProps) =>
     height: 100vh;
     padding-top: 5.5rem;
     border-right: 1px solid ${theme.color.border};
-    background-color: ${theme.color.white};
+    background-color: ${theme.color.bg_secondary};
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     z-index: ${theme.zindex.aside};
@@ -24,6 +24,7 @@ export const wrapper = (theme: Theme, { isShowAside }: wrapperProps) =>
     `}
 
     @media screen and ${theme.device.tablet} {
+      display: none;
     }
   `;
 

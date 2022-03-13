@@ -20,6 +20,7 @@ export const searchBar = (theme: Theme) => css`
   border: 0;
   padding: 0 0.8rem 0 3.2rem;
   font-size: ${theme.fontSize.small};
+  color: ${theme.color.text_title};
   transform: translateX(-1rem);
   transition: all 0.2s ease;
 

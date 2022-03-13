@@ -11,7 +11,7 @@ export const list = (theme: Theme) => css`
   height: 100%;
 
   &:hover {
-    li > a {
+    li > a > span {
       color: ${theme.color.text_gray};
     }
   }
