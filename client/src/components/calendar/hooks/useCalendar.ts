@@ -1,9 +1,10 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import dayjs from "dayjs";
 
 import { getMonthYearDetails, getNewMonthYear } from "@utils/helper/monthYear";
 
 const useCalendar = () => {
+  const isMounted = useRef<boolean>(false);
   const currentMonthYear = getMonthYearDetails(dayjs());
 
   const [monthYear, setMonthYear] = useState(currentMonthYear);
@@ -22,7 +23,10 @@ const useCalendar = () => {
   }, []);
 
   useEffect(() => {
-    setSelectedDate(monthYear.startDate);
+    if (isMounted.current) {
+      setSelectedDate(monthYear.startDate);
+    }
+    isMounted.current = true;
   }, [monthYear]);
 
   return {
