@@ -30,11 +30,7 @@ const CalendarContent: FC<CalendarContentProps> = ({
         {[...Array(monthYear.firstDOW)].map((_, i) => (
           <Date
             key={i}
-            date={dayjs(
-              `${monthYear.year}${monthYear.month}${
-                monthYear.prevMonthLastDate - monthYear.firstDOW + 1 + i
-              }`
-            )}
+            date={monthYear.firstWeekPrevMonthDate.add(i, "d")}
             disabled
             selectDate={selectDate}
           ></Date>
@@ -42,7 +38,7 @@ const CalendarContent: FC<CalendarContentProps> = ({
         {[...Array(monthYear.lastDate)].map((_, i) => (
           <Date
             key={i}
-            date={dayjs(`${monthYear.year}${monthYear.month}${i + 1}`)}
+            date={monthYear.startDate.add(i, "d")}
             isSelectedDate={dayjs(
               `${monthYear.year}${monthYear.month}${i + 1}`
             ).isSame(selectedDate)}
@@ -54,7 +50,7 @@ const CalendarContent: FC<CalendarContentProps> = ({
         ].map((_, i) => (
           <Date
             key={i}
-            date={dayjs(`${monthYear.year}${monthYear.month}${i + 1}`)}
+            date={monthYear.nextMonthStartDate.add(i, "d")}
             disabled
             selectDate={selectDate}
           />
