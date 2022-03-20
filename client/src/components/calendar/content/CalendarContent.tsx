@@ -41,7 +41,7 @@ const CalendarContent: FC<CalendarContentProps> = ({
             date={monthYear.startDate.add(i, "d")}
             isSelectedDate={dayjs(
               `${monthYear.year}${monthYear.month}${i + 1}`
-            ).isSame(selectedDate)}
+            ).isSame(selectedDate, "d")}
             selectDate={selectDate}
           />
         ))}
