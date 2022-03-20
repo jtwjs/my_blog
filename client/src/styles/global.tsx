@@ -53,6 +53,10 @@ const style = (theme: Theme) => css`
     box-shadow: 0 0 0 2px rgba(106, 173, 164, 0.65);
   }
 
+  [disabled] {
+    cursor: not-allowed;
+  }
+
   .a11y {
     position: absolute;
     width: 1px;

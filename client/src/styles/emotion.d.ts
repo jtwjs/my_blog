@@ -20,6 +20,7 @@ declare module "@emotion/react" {
       primary: string;
       black: string;
       white: string;
+      orange: string;
       border: string;
       bg_primary: string;
       bg_secondary: string;
@@ -27,7 +28,12 @@ declare module "@emotion/react" {
       text_title: string;
       text_base: string;
       text_gray: string;
+      text_reflection: string;
+      text_reverseReflection: string;
+      disabled: string;
       icon: string;
+      calendar_sat: string;
+      calendar_sun: string;
     };
     zindex: {
       header: number;
@@ -35,6 +41,10 @@ declare module "@emotion/react" {
       main: number;
       footer: number;
       modal: number;
+    };
+    boxShadow: {
+      primary: string;
+      secondary: string;
     };
   }
 }
