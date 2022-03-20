@@ -2,8 +2,8 @@ import React, { forwardRef } from "react";
 import Link from "next/link";
 
 import Nav from "@components/layout/nav/Nav";
+import DarkModeSwitch from "@components/darkModeSwitch/DarkModeSwitch";
 import SearchBar from "./searchBar/SearchBar";
-import DarkModeSwitch from "./darkModeSwitch/DarkModeSwitch";
 import MenuButton from "./menuButton/MenuButton";
 import * as S from "./Header.style";
 
