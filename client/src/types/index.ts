@@ -1,3 +1,4 @@
 import { CurrentTheme } from "./common";
+import { MonthYear } from "./calendar";
 
-export type { CurrentTheme };
+export type { CurrentTheme, MonthYear };
