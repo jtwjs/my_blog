@@ -12,7 +12,7 @@ type DarkModeSwitchProps = {
 const DarkModeSwitch: FC<DarkModeSwitchProps> = ({ className }) => {
   const [theme, toggleTheme] = useTheme();
 
-  const handleEnter = (e: React.KeyboardEvent<HTMLLabelElement>): void => {
+  const handleEnter = (e: React.Keyboard<HTMLLabelElement>): void => {
     e.keyCode === 13 && toggleTheme();
   };
 
