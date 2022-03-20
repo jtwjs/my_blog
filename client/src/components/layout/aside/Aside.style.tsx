@@ -51,3 +51,13 @@ export const navBar = (theme: Theme) => css`
     }
   }
 `;
+
+export const darkSwitch = (theme: Theme) => css`
+  position: absolute;
+  bottom: 0;
+  display: block;
+
+  @media screen and ${theme.device.tablet} {
+    display: none;
+  }
+`;
