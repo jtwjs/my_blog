@@ -7,10 +7,27 @@ export const wrapper = (theme: Theme) => css`
   border-top: 1px solid ${theme.color.border};
   padding: 4rem 0;
   background-color: ${theme.color.bg_secondary};
+`;
+
+export const container = (theme: Theme) => css`
+  position: relative;
+  display: flex;
+  align-items: center;
 
   & > span {
     font-size: ${theme.fontSize.small};
     font-weight: 500;
     line-height: 1.25;
+  }
+`;
+
+export const github = (theme: Theme) => css`
+  position: absolute;
+  right: -3.6rem;
+  width: 32px;
+  height: 32px;
+
+  & > svg {
+    fill: ${theme.color.text_reverseReflection};
   }
 `;
