@@ -1,14 +1,12 @@
-export interface NavItem {
+export interface NavMenu {
   label: string;
   path: string;
-  external?: boolean;
 }
 
-export const navItems: NavItem[] = [
+export const navItems: NavMenu[] = [
   { label: "home", path: "/home" },
   { label: "blog", path: "/blog" },
   { label: "daylog", path: "/daylog" },
+  { label: "projects", path: "/projects" },
   { label: "about", path: "/about" },
-  { label: "guest", path: "/guest" },
-  { label: "git", path: "https://github.com/jtwjs", external: true },
 ];
