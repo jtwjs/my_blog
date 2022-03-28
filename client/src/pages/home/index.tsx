@@ -4,7 +4,7 @@ import Link from "next/link";
 import { featureItems } from "@assets/static/home";
 import * as S from "./home.style";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <>
       <div css={S.home}>
@@ -29,4 +29,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default HomePage;
