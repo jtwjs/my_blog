@@ -13,6 +13,7 @@ export const list = (theme: Theme) => css`
   &:hover {
     li > a > span {
       color: ${theme.color.text_gray};
+      transition: all 300ms ease;
     }
   }
 `;
