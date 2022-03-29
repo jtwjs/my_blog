@@ -62,6 +62,7 @@ const light: Theme = {
   boxShadow: {
     primary: "5px 5px 15px #f2f2f2, -5px -5px 15px #ffffff;",
     secondary: "inset 5px 5px 15px #f7f7f7, inset -5px -5px 15px #ffffff;",
+    project: "5px 5px 5px -2px rgba(25, 26, 32, 0.2);",
   },
 };
 
@@ -91,6 +92,7 @@ const dark: Theme = {
   boxShadow: {
     primary: "10px 10px 20px #1a1e25,-10px -10px 20px #1e242b",
     secondary: "inset 8px 8px 17px #1b1f26, inset -8px -8px 17px #1d232a",
+    project: "5px 5px 5px -2px rgba(204, 204, 204, 0.2);",
   },
 };
 

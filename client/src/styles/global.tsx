@@ -1,7 +1,9 @@
 import { Global, css, Theme } from "@emotion/react";
 
 const style = (theme: Theme) => css`
-  * {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;

@@ -45,6 +45,7 @@ declare module "@emotion/react" {
     boxShadow: {
       primary: string;
       secondary: string;
+      project: string;
     };
   }
 }
