@@ -9,7 +9,10 @@ const HomePage: NextPage = () => {
     <>
       <div css={S.home}>
         <figure css={S.fallback}>
-          <img src="" alt="" />
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            alt=""
+          />
         </figure>
         <h2 css={S.title}>FE developer</h2>
         <p css={S.subTitle}>Daily BLOG</p>
