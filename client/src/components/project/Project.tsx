@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import * as S from "./ProjectItem.style";
+import * as S from "./Project.style";
 
-const ProjectItem: FC = () => {
+const Project: FC = () => {
   return (
     <li css={S.project}>
       <div css={S.container}>
@@ -35,4 +35,4 @@ const ProjectItem: FC = () => {
   );
 };
 
-export default ProjectItem;
+export default Project;
