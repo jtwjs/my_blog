@@ -5,7 +5,7 @@ import * as S from "./projects.style";
 
 const ProjectsPage: NextPage = () => {
   return (
-    <>
+    <section>
       <h2 className="a11y">projects</h2>
       <ul css={S.projects}>
         <Project />
@@ -14,7 +14,7 @@ const ProjectsPage: NextPage = () => {
         <Project />
         <Project />
       </ul>
-    </>
+    </section>
   );
 };
 

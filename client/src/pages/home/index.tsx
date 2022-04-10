@@ -6,7 +6,7 @@ import * as S from "./home.style";
 
 const HomePage: NextPage = () => {
   return (
-    <>
+    <section>
       <div css={S.home}>
         <figure css={S.fallback}>
           <img
@@ -28,7 +28,7 @@ const HomePage: NextPage = () => {
           </dl>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

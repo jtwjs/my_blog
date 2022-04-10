@@ -19,9 +19,7 @@ const AppLayout: FC = ({ children }) => {
       {globalStyles}
       <Header ref={exceptRef} />
       <Aside ref={asideRef} isShowAside={isShowAside} />
-      <main css={S.main}>
-        <section css={S.container}>{children}</section>
-      </main>
+      <main css={S.main}>{children}</main>
       <Footer />
     </ThemeProvider>
   );
