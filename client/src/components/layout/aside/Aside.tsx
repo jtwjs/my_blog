@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 
 import Nav from "@components/layout/nav/Nav";
-import Categories from "@components/categories/Categories";
 import DarkModeSwitch from "@components/darkModeSwitch/DarkModeSwitch";
 import { DOM_ID } from "@utils/constants";
+import Categories from "./categories/Categories";
 import * as S from "./Aside.style";
 
 type AsideProps = {
