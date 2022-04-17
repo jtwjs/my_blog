@@ -1,16 +1,13 @@
 import type { NextPage } from "next";
 
-import Categories from "@components/categories/Categories";
+import BlogLayout from "@components/layout/BlogLayout";
 import * as S from "./blog.style";
 
 const BlogPage: NextPage = () => {
   return (
-    <>
-      <aside css={S.sidebar}>
-        <Categories />
-      </aside>
+    <BlogLayout>
       <section css={S.section}></section>
-    </>
+    </BlogLayout>
   );
 };
 
