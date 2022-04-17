@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import { navItems } from "@assets/static/nav";
 import NavItem from "./navItem/NavItem";
@@ -11,8 +11,8 @@ type NavProps = {
 const Nav: FC<NavProps> = ({ className }) => (
   <nav css={S.wrapper} className={className}>
     <ul css={S.list}>
-      {navItems.map(({ path, label, external = false }) => (
-        <NavItem key={label} path={path} label={label} external={external} />
+      {navItems.map(({ path, label }) => (
+        <NavItem key={label} path={path} label={label} />
       ))}
     </ul>
   </nav>
