@@ -14,6 +14,7 @@ export const opener = (theme: Theme, isOpened: boolean) => css`
   & > svg {
     fill: ${theme.color.text_reverseReflection};
     transform: ${isOpened && "rotate(90deg)"};
+    pointer-events: none;
   }
 `;
 
