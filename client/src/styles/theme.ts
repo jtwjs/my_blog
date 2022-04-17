@@ -32,7 +32,7 @@ const zindex = {
   header: 200,
   aside: 100,
   main: 50,
-  footer: 80,
+  footer: 150,
   modal: 500,
 };
 
