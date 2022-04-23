@@ -1,99 +1,58 @@
-import { FC, useRef, useState, useEffect } from "react";
+import { FC } from "react";
 
 import PostCard from "@components/post/PostCard";
 import PrevButton from "@components/button/prevButton/PrevButton";
 import NextButton from "@components/button/nextButton/NextButton";
 import { IPostCard } from "@type/blog";
 import * as S from "./PostSlider.style";
+import usePostSlider from "./hooks/usePostSlider";
 
 type PostSliderProps = {
+  id: string;
   label: string;
   slides: IPostCard[];
 };
-const PostSlider: FC<PostSliderProps> = ({ label, slides }) => {
-  const slideRef = useRef<HTMLDivElement>(null);
-
-  const [sliderOpt, setSliderOpt] = useState({
-    activeIndex: 0,
-    translate: 0,
-    transition: 500,
-  });
-  const [slideItems, setSlideItems] = useState(slides);
-
-  const nextSlide = () => {
-    if (sliderOpt.activeIndex === slideItems.length - 1) {
-      return setSliderOpt({
-        ...sliderOpt,
-        translate: 0,
-        activeIndex: 0,
-      });
-    }
-
-    setSliderOpt({
-      ...sliderOpt,
-      activeIndex: sliderOpt.activeIndex + 1,
-      translate: (sliderOpt.activeIndex + 1) * slideRef?.current?.clientWidth!,
-    });
-  };
-
-  const prevSlide = () => {
-    if (sliderOpt.activeIndex === 0) {
-      return setSliderOpt({
-        ...sliderOpt,
-        translate: (slideItems.length - 1) * slideRef?.current?.clientWidth!,
-        activeIndex: slideItems.length - 1,
-      });
-    }
-
-    setSliderOpt({
-      ...sliderOpt,
-      activeIndex: sliderOpt.activeIndex - 1,
-      translate: (sliderOpt.activeIndex - 1) * slideRef?.current?.clientWidth!,
-    });
-  };
-
-  useEffect(() => {
-    setSlideItems((prev) => {
-      const update = [...prev];
-      const length = update.length;
-      update[length] = { ...update[0], id: `${update[0].id}-new` };
-      return update;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (sliderOpt.activeIndex === slideItems.length - 1) {
-      return setSliderOpt({
-        translate: 0,
-        transition: 0,
-        activeIndex: 0,
-      });
-    }
-    setSliderOpt({
-      ...sliderOpt,
-      transition: 500,
-    });
-  }, [sliderOpt.activeIndex]);
+const PostSlider: FC<PostSliderProps> = ({ id, label, slides }) => {
+  const {
+    sliderRef,
+    slideRef,
+    slideItems,
+    visibleNumber,
+    sliderOpt,
+    prevSlide,
+    nextSlide,
+  } = usePostSlider(slides);
 
   return (
     <div css={S.container}>
       <div css={S.header}>
-        <span id={`${label}-slider`}>{label}</span>
+        <span id={`${id}-slider`}>{label}</span>
         <div css={S.navigation}>
-          <PrevButton css={S.navgationBtn} label="이전" onClick={prevSlide} />
-          <NextButton css={S.navgationBtn} label="다음" onClick={nextSlide} />
+          <PrevButton
+            css={S.navgationBtn}
+            label="이전"
+            disabled={visibleNumber >= slides.length}
+            onClick={prevSlide}
+          />
+          <NextButton
+            css={S.navgationBtn}
+            label="다음"
+            disabled={visibleNumber >= slides.length}
+            onClick={nextSlide}
+          />
         </div>
       </div>
-      <div css={S.slider} role="group" aria-labelledby={`${label}-slider`}>
+      <div css={S.slider} role="group" aria-labelledby={`${id}-slider`}>
         <div
           css={(theme) =>
             S.content(
               theme,
               slideItems.length,
-              sliderOpt.translate,
-              sliderOpt.transition
+              visibleNumber,
+              sliderOpt.translate
             )
           }
+          ref={sliderRef}
         >
           {slideItems.map(({ id, thumbnail, createAt, title, desc }) => (
             <PostCard
