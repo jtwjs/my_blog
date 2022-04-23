@@ -17,8 +17,8 @@ const BlogPage: NextPage = () => {
             있다면 번역해서 게시하고 있습니다.
           </p>
         </div>
-        <PostSlider label="인기 글" slides={dummyPostCards} />
-        <PostSlider label="최신 글" slides={dummyPostCards} />
+        <PostSlider id="populer" label="인기 글" slides={dummyPostCards} />
+        <PostSlider id="recent" label="최신 글" slides={dummyPostCards} />
       </section>
     </BlogLayout>
   );
