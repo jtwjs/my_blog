@@ -26,15 +26,14 @@ export const slider = (theme: Theme) => css`
 export const content = (
   theme: Theme,
   length: number,
-  translate: number,
-  transition: number
+  visibleNumber: number,
+  translate: number
 ) => css`
   display: grid;
-  grid-template-columns: repeat(${length}, 1fr);
-  width: ${100 * length}%;
+  grid-template-columns: repeat(${length * visibleNumber}, 1fr);
+  width: ${length * 100}%;
   height: 100%;
   transform: translateX(-${translate}px);
-  transition: transform ease-in-out ${transition}ms;
 `;
 
 export const navigation = (theme: Theme) => css`

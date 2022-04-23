@@ -1,6 +1,7 @@
 import { css, Theme } from "@emotion/react";
 
 export const post = (theme: Theme) => css`
+  width: 100%;
   padding: 0 2.5rem;
 `;
 
