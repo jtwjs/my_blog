@@ -1,8 +1,9 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 
 import Nav from "@components/layout/nav/Nav";
 import DarkModeSwitch from "@components/darkModeSwitch/DarkModeSwitch";
 import { DOM_ID } from "@utils/constants";
+import Categories from "./categories/Categories";
 import * as S from "./Aside.style";
 
 type AsideProps = {
@@ -17,6 +18,7 @@ const Aside = forwardRef<HTMLElement, AsideProps>(({ isShowAside }, ref) => {
       ref={ref}
     >
       <Nav css={S.navBar} />
+      <Categories css={S.category} />
       <DarkModeSwitch css={S.darkSwitch} />
     </aside>
   );

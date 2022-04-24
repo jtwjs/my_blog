@@ -7,6 +7,7 @@ export const wrapper = (theme: Theme) => css`
   border-top: 1px solid ${theme.color.border};
   padding: 4rem 0;
   background-color: ${theme.color.bg_secondary};
+  z-index: ${theme.zindex.footer};
 `;
 
 export const container = (theme: Theme) => css`

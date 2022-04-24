@@ -13,6 +13,7 @@ const NavItem: FC<NavMenu> = ({ path, label }) => {
     <li css={S.wrapper}>
       <Link href={path}>
         <a
+          href="#"
           css={(theme) => S.link(theme, { isActive: currentPage })}
           aria-current={currentPage ? "page" : "false"}
         >

@@ -13,6 +13,12 @@ export const wrapper = (theme: Theme) => css`
     pointer-events: none;
   }
 
+  &[disabled] {
+    & > svg {
+      fill: ${theme.color.disabled};
+    }
+  }
+
   @media screen and ${theme.device.tablet} {
     &:hover {
       & > svg {

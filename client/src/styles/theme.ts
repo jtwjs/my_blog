@@ -32,7 +32,7 @@ const zindex = {
   header: 200,
   aside: 100,
   main: 50,
-  footer: 80,
+  footer: 150,
   modal: 500,
 };
 
@@ -51,7 +51,7 @@ const light: Theme = {
     border: "#eaecef",
     text_title: "#24292f",
     text_base: "#2c3e50",
-    text_gray: "#ccc",
+    text_gray: "#a5a5a5",
     text_reflection: "#FFF",
     text_reverseReflection: "#191A20",
     icon: "#191A20",

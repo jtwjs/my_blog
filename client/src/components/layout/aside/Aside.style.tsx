@@ -52,6 +52,10 @@ export const navBar = (theme: Theme) => css`
   }
 `;
 
+export const category = (theme: Theme) => css`
+  border-top: 1px solid ${theme.color.border};
+`;
+
 export const darkSwitch = (theme: Theme) => css`
   position: absolute;
   bottom: 0;
