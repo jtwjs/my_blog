@@ -1,13 +1,24 @@
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback, useEffect, RefObject } from "react";
 
-import { IPostCard } from "@type/blog";
+import { IPostCard, SliderOption } from "@type/blog";
+import { getCalcSlides, getExpansionCalcSlides } from "@utils/helper/postSlide";
 
-const usePostSlider = (slides: IPostCard[]) => {
+interface UsePostSlider {
+  sliderRef: RefObject<HTMLDivElement>;
+  slideRef: RefObject<HTMLDivElement>;
+  slideItems: IPostCard[];
+  visibleNumber: number;
+  sliderOpt: SliderOption;
+  prevSlide: () => void;
+  nextSlide: () => void;
+}
+
+const usePostSlider = (slides: IPostCard[]): UsePostSlider => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const slideRef = useRef<HTMLDivElement>(null);
 
   const [visibleNumber, setVisibleNumber] = useState<number>(100);
-  const [sliderOpt, setSliderOpt] = useState({
+  const [sliderOpt, setSliderOpt] = useState<SliderOption>({
     activeIndex: 1,
     translate: 0,
   });
@@ -40,31 +51,6 @@ const usePostSlider = (slides: IPostCard[]) => {
     });
   }, [sliderOpt, visibleNumber]);
 
-  const calcSlideItems = (slides: IPostCard[]) => {
-    const update = [...slides];
-    const firstItem = update[0];
-    const lastItem = update[update.length - 1];
-    const length = update.length;
-    update[length] = { ...firstItem, id: `${firstItem.id}-copy` };
-    return [{ ...lastItem, id: `${lastItem.id}-copy` }, ...update];
-  };
-
-  const expansionCalcSlideItems = (slides: IPostCard[]) => {
-    const update = [...slides];
-    const firstItem = update[0];
-    const secondItem = update[1];
-    const lastItem = update[update.length - 1];
-    const lastSecondItem = update[update.length - 2];
-    const length = update.length;
-    update[length] = { ...firstItem, id: `${firstItem.id}-copy` };
-    update[length + 1] = { ...secondItem, id: `${secondItem.id}-copy` };
-    return [
-      { ...lastSecondItem, id: `${lastSecondItem.id}-copy` },
-      { ...lastItem, id: `${lastItem.id}-copy` },
-      ...update,
-    ];
-  };
-
   useEffect(() => {
     setVisibleNumber(
       window.screen.width >= 1200 ? 4 : window.screen.width >= 768 ? 2 : 1
@@ -81,7 +67,7 @@ const usePostSlider = (slides: IPostCard[]) => {
       if (visible < slides.length) {
         setSliderOpt({
           ...sliderOpt,
-          translate: slideRef?.current?.clientWidth!,
+          translate: slideRef.current?.clientWidth!,
         });
       } else {
         setSlideItems(slides);
@@ -104,7 +90,6 @@ const usePostSlider = (slides: IPostCard[]) => {
     }
     sliderRef.current!.style.transition = "0ms";
     const idx = ~~Math.sqrt(visibleNumber);
-
     setSliderOpt({
       ...sliderOpt,
       activeIndex: idx,
@@ -113,8 +98,8 @@ const usePostSlider = (slides: IPostCard[]) => {
 
     const newSlideItems =
       visibleNumber === 4
-        ? expansionCalcSlideItems(slides)
-        : calcSlideItems(slides);
+        ? getExpansionCalcSlides(slides)
+        : getCalcSlides(slides);
 
     setSlideItems(newSlideItems);
   }, [visibleNumber]);
